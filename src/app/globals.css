@@ -54,3 +54,5 @@ html{scroll-behavior:auto}body,body a,body button,body input,body summary{cursor
 /* The fifth Why BerryBox benefit closes the grid as a full-width reward layer. */
 .features .earn-rewards{grid-column:1/-1;min-height:10rem;background:linear-gradient(110deg,#9b1125,#43000b 72%);display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;column-gap:1.5rem;align-items:center}.features .earn-rewards small{grid-column:1}.features .earn-rewards svg{grid-column:1;grid-row:2;margin:0;color:#fff}.features .earn-rewards h3{grid-column:2;grid-row:1/3;font-size:clamp(1.8rem,4vw,3.6rem);color:#fff}
 
+.hero-bottom .chain-highlight{color:#00c805;font-weight:900}
+
