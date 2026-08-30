@@ -48,3 +48,6 @@ html{scroll-behavior:auto}body,body a,body button,body input,body summary{cursor
 
 :root{--font-anton:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;--font-geist-sans:Arial,Helvetica,sans-serif}
 
+/* Keep the expanded navigation comfortable at tablet widths. */
+@media (min-width:768px) and (max-width:1050px){header{gap:1rem;padding-inline:1.5rem}header nav{gap:1rem;font-size:.65rem;letter-spacing:.12em}}
+

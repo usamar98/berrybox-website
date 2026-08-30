@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ArrowDownRight, ArrowUpRight, Bot, Box, ChevronDown, Code2, Menu, Play, Share2, Sparkles, Users, WandSparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CreatorRewards } from "@/components/creator-rewards";
 
 const worlds = [
   { title: "FANTASY KINGDOM", tag: "OPEN WORLD", image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85" },
@@ -32,11 +33,11 @@ export function BerryBoxExperience() {
   return <div className="site">
     <header>
       <a className="logo" href="#top" aria-label="BerryBox home"><Image src="/berrybox.png" alt="BerryBox" width={220} height={82} priority /></a>
-      <nav><a href="#workflow">WORKFLOW</a><a href="#worlds">WORLDS</a><a href="#studio">STUDIO</a><a href="#roadmap">ROADMAP</a></nav>
+      <nav><a href="#workflow">WORKFLOW</a><a href="#worlds">WORLDS</a><a href="#studio">STUDIO</a><a href="#rewards">REWARDS</a><a href="#roadmap">ROADMAP</a></nav>
       <a className="cta desktop button-link" href="#join">START CREATING <ArrowUpRight /></a>
       <button className="mobile" aria-label="Open menu" onClick={() => setMenuOpen(true)}><Menu /></button>
     </header>
-    <div className={`mobile-nav ${menuOpen ? "open" : ""}`}><button aria-label="Close menu" onClick={() => setMenuOpen(false)}><X /></button>{[["WORKFLOW", "workflow"], ["WORLDS", "worlds"], ["STUDIO", "studio"], ["ROADMAP", "roadmap"]].map(([name, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{name}</a>)}</div>
+    <div className={`mobile-nav ${menuOpen ? "open" : ""}`}><button aria-label="Close menu" onClick={() => setMenuOpen(false)}><X /></button>{[["WORKFLOW", "workflow"], ["WORLDS", "worlds"], ["STUDIO", "studio"], ["REWARDS", "rewards"], ["ROADMAP", "roadmap"]].map(([name, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{name}</a>)}</div>
 
     <main id="top">
       <section className="hero">
@@ -60,9 +61,11 @@ export function BerryBoxExperience() {
 
       <section className="agents section-pad"><p data-reveal className="eyebrow lime">07 - YOUR AI CREATION TEAM</p><h2 data-reveal>SIX AGENTS. <span>ONE VISION.</span></h2><div className="agent-list">{agents.map((agent, index) => <article data-reveal key={agent}><small>0{index + 1}</small><Bot /><h3>{agent}</h3><span>ACTIVE</span></article>)}</div></section>
 
-      <section id="roadmap" className="roadmap section-pad"><p data-reveal className="eyebrow">08 - ROADMAP</p><h2 data-reveal>BUILDING THE <span>CREATOR ECONOMY.</span></h2><div className="roadmap-grid">{roadmap.map(([quarter, milestone], index) => <article data-reveal key={milestone} className={index === 0 ? "current" : ""}><small>{quarter}</small><i /><h3>{milestone}</h3><p>{index === 0 ? "IN DEVELOPMENT" : "UP NEXT"}</p></article>)}</div></section>
+      <CreatorRewards />
 
-      <section className="faq section-pad"><p data-reveal className="eyebrow lime">09 - FAQ</p><h2 data-reveal>QUESTIONS, <span>ANSWERED.</span></h2><div className="faq-list">{faqs.map(([question, answer], index) => <details data-reveal key={question}><summary><span>0{index + 1} / {question}</span><ChevronDown /></summary><p>{answer}</p></details>)}</div></section>
+      <section id="roadmap" className="roadmap section-pad"><p data-reveal className="eyebrow">09 - ROADMAP</p><h2 data-reveal>BUILDING THE <span>CREATOR ECONOMY.</span></h2><div className="roadmap-grid">{roadmap.map(([quarter, milestone], index) => <article data-reveal key={milestone} className={index === 0 ? "current" : ""}><small>{quarter}</small><i /><h3>{milestone}</h3><p>{index === 0 ? "IN DEVELOPMENT" : "UP NEXT"}</p></article>)}</div></section>
+
+      <section className="faq section-pad"><p data-reveal className="eyebrow lime">10 - FAQ</p><h2 data-reveal>QUESTIONS, <span>ANSWERED.</span></h2><div className="faq-list">{faqs.map(([question, answer], index) => <details data-reveal key={question}><summary><span>0{index + 1} / {question}</span><ChevronDown /></summary><p>{answer}</p></details>)}</div></section>
     </main>
 
     <footer id="join"><p className="eyebrow">YOUR WORLD IS WAITING</p><h2 data-reveal>BUILD WHAT&apos;S NEXT. <span>CREATE YOUR FIRST AI-POWERED GAME IN MINUTES.</span></h2><a className="footer-cta" href="#studio">START CREATING <ArrowUpRight /></a><div className="signup"><p>GET PRODUCT DROPS, CREATOR STORIES AND NEW WORLD RELEASES IN YOUR INBOX.</p><form onSubmit={(event) => event.preventDefault()}><input aria-label="Email address" placeholder="YOUR EMAIL ADDRESS" type="email" /><button aria-label="Subscribe"><ArrowUpRight /></button></form></div><div className="foot-grid"><div><b className="footer-wordmark">BERRYBOX</b><p>CREATE. PLAY. BUILD.<br />THE AI-NATIVE HOME FOR THE NEXT GENERATION OF GAME CREATORS.</p></div><p><b>PLATFORM</b><br />WORKFLOW<br />CREATOR STUDIO<br />MARKETPLACE</p><div className="footer-socials"><b>FOLLOW</b><div><a href="https://t.me" target="_blank" rel="noreferrer" aria-label="Telegram"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 2.51 18.7 21.13c-.24 1.32-.88 1.64-1.79 1.02l-4.93-3.63-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.18 14.93l-4.87-1.52c-1.06-.33-1.08-1.06.22-1.57L20.57 4.5c.88-.33 1.65.2 1.37 2.01Z" /></svg></a><a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.74-8.85L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.11l11.97 15.64Z" /></svg></a><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.41-1.26.74-1.55-2.58-.29-5.29-1.29-5.29-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18a10.96 10.96 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.72 5.39-5.3 5.68.42.36.79 1.06.79 2.14v3.27c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .7Z" /></svg></a></div></div></div><div className="copyright"><span>© 2026 BERRYBOX</span><span>THE FUTURE IS CREATED</span></div></footer>

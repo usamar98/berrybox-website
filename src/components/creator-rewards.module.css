@@ -1,0 +1,265 @@
+.rewards {
+  position: relative;
+  isolation: isolate;
+  scroll-margin-top: 4.5rem;
+  background:
+    radial-gradient(ellipse at 95% 42%, #4b081a80, transparent 55%),
+    linear-gradient(145deg, #080808, #10070b 65%, #080808);
+  border-top: 1px solid #ffffff20;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.sectionLabel > p { margin: 0; }
+
+.status {
+  padding: .55rem .75rem;
+  border: 1px solid #ff63794d;
+  color: #ff9ba9;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: end;
+  gap: 4rem;
+}
+
+.intro h2 {
+  margin: 0;
+  font-size: clamp(3.4rem, 7.7vw, 8.5rem);
+  line-height: .88;
+  letter-spacing: -.045em;
+}
+
+.intro h2 span { display: block; color: var(--lime); }
+
+.intro > p {
+  max-width: 31rem;
+  margin: 0 0 .3rem;
+  color: #c5b8bd;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.intro strong { color: #fff; font-weight: 600; }
+
+.content {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: start;
+  gap: 4rem;
+  margin-top: 3.5rem;
+}
+
+.content > *, .intro > * { min-width: 0; }
+
+.pathList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #ffffff30;
+}
+
+.pathList li {
+  display: grid;
+  grid-template-columns: 1.4rem 3rem 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.7rem 0;
+  border-bottom: 1px solid #ffffff26;
+}
+
+.pathNumber {
+  padding-top: .9rem;
+  color: #bca6ad;
+  font-family: var(--font-mono);
+  font-size: .65rem;
+}
+
+.pathIcon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #ff5e765c;
+  background: #5a0a1b55;
+  color: #ff667b;
+}
+
+.pathIcon svg { width: 1.4rem; height: 1.4rem; stroke-width: 1.5; }
+
+.pathLabel {
+  margin: 0 0 .5rem;
+  color: #ff8b9d;
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.pathList h3 { margin: 0; font-size: 1.8rem; line-height: 1.1; }
+
+.pathDescription {
+  max-width: 29rem;
+  margin: .6rem 0 0;
+  color: #bfb2b7;
+  font-size: .86rem;
+  line-height: 1.75;
+}
+
+.studioLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1.7rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid #ff667a80;
+  background: #700d21;
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.studioLink svg { width: 1.1rem; height: 1.1rem; }
+.studioLink:hover { background: #99182f; }
+.studioLink:focus-visible, .stocks a:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+
+.showcase {
+  border: 1px solid #ff77894d;
+  background: #0c080b;
+  box-shadow: 12px 12px 0 #340912, 12px 12px 0 1px #ff617a26;
+}
+
+.showcaseBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .9rem 1.4rem;
+  border-bottom: 1px solid #ff637955;
+  background: #4b0a19;
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+}
+
+.showcaseBar svg { width: 1.2rem; height: 1.2rem; color: #ff8c9e; }
+
+.showcaseBody {
+  padding: 1.8rem 1.4rem 1.2rem;
+  background:
+    linear-gradient(#ff758508 1px, transparent 1px),
+    linear-gradient(90deg, #ff758508 1px, transparent 1px),
+    radial-gradient(ellipse at 100% 0, #940b30a6, transparent 70%);
+  background-size: 32px 32px, 32px 32px, auto;
+}
+
+.showcaseEyebrow {
+  margin: 0 0 1rem;
+  color: #ffadb9;
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.showcase h3 {
+  margin: 0;
+  font-size: clamp(2.5rem, 3.7vw, 4.5rem);
+  line-height: .95;
+  letter-spacing: -.025em;
+}
+
+.showcaseDescription { max-width: 22rem; margin: 1rem 0 1.5rem; font-size: .82rem; line-height: 1.7; color: #d3bec5; }
+.stocks { display: grid; gap: .6rem; list-style: none; margin: 0; padding: 0; }
+
+.stocks a {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ffffff3b;
+  background: #100c10;
+  color: #f5f5ef;
+}
+
+.stocks li:first-child a { background: #f1ede8; border-color: #f1ede8; color: #1e1016; }
+.stocks a:hover { border-color: #ff667b; }
+.stocks a > svg { width: 1.1rem; height: 1.1rem; opacity: .7; }
+
+.ticker {
+  border-right: 1px solid currentColor;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+}
+
+.company { font-family: var(--font-anton); font-size: 1.65rem; line-height: 1; }
+.exampleNote { margin: 1rem 0 0; color: #bdaab1; font-size: .65rem; line-height: 1.7; }
+
+.showcaseFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.4rem;
+  border-top: 1px solid #ffffff20;
+  font-size: .5rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  color: #bca6ae;
+}
+
+.showcaseFooter > span:last-child { display: flex; align-items: center; gap: .4rem; color: #ff8c9e; }
+.showcaseFooter svg { width: .85rem; height: .85rem; }
+
+.disclosure {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 2rem;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ffffff24;
+}
+
+.disclosure > span { padding-top: .15rem; color: #e2c0c9; font-size: .58rem; font-weight: 700; letter-spacing: .14em; }
+.disclosure > p { margin: 0; color: #ad9aa1; font-size: .7rem; line-height: 1.8; }
+
+@media (max-width: 1050px) {
+  .intro, .content { gap: 2.5rem; grid-template-columns: 1fr 1fr; }
+  .pathList li { grid-template-columns: 3rem 1fr; }
+  .pathNumber { display: none; }
+  .showcaseFooter { flex-direction: column; align-items: flex-start; gap: .5rem; }
+}
+
+@media (max-width: 767px) {
+  .sectionLabel { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .status { font-size: .55rem; }
+  .intro, .content { grid-template-columns: 1fr; gap: 2rem; }
+  .intro h2 { font-size: clamp(3.4rem, 13vw, 5.5rem); }
+  .intro > p { max-width: 34rem; font-size: .95rem; }
+  .content { margin-top: 2.5rem; gap: 3rem; }
+  .pathList li { padding: 1.5rem 0; }
+  .pathList h3 { font-size: 1.65rem; }
+  .studioLink { width: 100%; font-size: .65rem; }
+  .showcase { margin-right: .5rem; box-shadow: 8px 8px 0 #340912, 8px 8px 0 1px #ff617a26; }
+  .showcaseBody { padding: 1.5rem 1rem 1.2rem; }
+  .showcaseBar, .showcaseFooter { padding-inline: 1rem; }
+  .showcase h3 { font-size: clamp(2.5rem, 10vw, 4rem); }
+  .stocks a { grid-template-columns: 3.6rem 1fr auto; gap: .75rem; padding: 1rem .8rem; }
+  .company { font-size: 1.5rem; }
+  .ticker { font-size: .65rem; }
+  .disclosure { grid-template-columns: 1fr; gap: .7rem; margin-top: 2.5rem; }
+}
