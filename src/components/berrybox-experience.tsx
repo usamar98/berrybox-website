@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ArrowDownRight, ArrowUpRight, Bot, Box, ChevronDown, Code2, Menu, Play, Share2, Sparkles, Users, WandSparkles, X } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Bot, Box, ChevronDown, Code2, Menu, Play, Share2, Sparkles, Trophy, Users, WandSparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CreatorRewards } from "@/components/creator-rewards";
 import { HeroStockRewards } from "@/components/hero-stock-rewards";
@@ -18,6 +18,7 @@ const features = [
   { icon: Users, title: "AI CHARACTER DESIGN", text: "Generate heroes, rivals and intelligent NPCs with distinctive personalities." },
   { icon: Code2, title: "AI GAMEPLAY SYSTEMS", text: "Create quests, progression, combat and interactions without writing code." },
   { icon: Share2, title: "PUBLISH & SHARE", text: "Launch instantly, invite players and evolve your game with community feedback." },
+  { icon: Trophy, title: "EARN REWARDS", text: "Win games, launch worlds and publish templates to qualify for planned stock rewards." },
 ];
 
 const agents = ["WORLD ARCHITECT", "CHARACTER DESIGNER", "GAMEPLAY DESIGNER", "QUEST WRITER", "AUDIO COMPOSER", "NPC INTELLIGENCE"];
@@ -55,7 +56,7 @@ export function BerryBoxExperience() {
 
       <section id="worlds" className="worlds"><div className="marquee"><div>CREATED WITH BERRYBOX AI ✦ FANTASY ✦ SCI-FI ✦ RACING ✦ SANDBOX ✦ SURVIVAL ✦ CREATED WITH BERRYBOX AI ✦</div></div><div className="section-pad"><p data-reveal className="eyebrow lime">03 - FEATURED GAME WORLDS</p><h2 data-reveal>ANY IDEA. ANY <span>WORLD.</span></h2><div className="cards">{worlds.map((world, index) => <article data-reveal className="world-card" key={world.title}><div className="world-image" style={{ backgroundImage: `linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.08)),url('${world.image}')` }} /><div className="world-copy"><div><span>0{index + 1}</span><span>{world.tag}</span></div><div><small>CREATED WITH BERRYBOX AI</small><h3>{world.title}</h3><button>EXPLORE WORLD <ArrowUpRight /></button></div></div></article>)}</div></div></section>
 
-      <section className="platform section-pad"><p data-reveal className="eyebrow lime">04 - PLATFORM FEATURES</p><h2 data-reveal>ONE STUDIO. <span>EVERY SYSTEM.</span></h2><div className="platform-grid">{features.map(({ icon: Icon, title, text }, index) => <article data-reveal key={title}><small>0{index + 1}</small><Icon /><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+      <section className="platform section-pad"><p data-reveal className="eyebrow lime">04 - PLATFORM FEATURES</p><h2 data-reveal>ONE STUDIO. <span>EVERY SYSTEM.</span></h2><div className="platform-grid">{features.map(({ icon: Icon, title, text }, index) => <article data-reveal key={title} className={title === "EARN REWARDS" ? "reward-feature" : undefined}><small>0{index + 1}</small><Icon /><h3>{title}</h3><p>{text}</p></article>)}</div></section>
 
       <section id="studio" className="studio section-pad"><div className="studio-copy"><p data-reveal className="eyebrow lime">05 - CREATOR STUDIO</p><h2 data-reveal>DESCRIBE IT. <span>WATCH IT EXIST.</span></h2><p data-reveal>Your imagination is the interface. BerryBox agents turn your prompt into environments, characters, systems, quests and playable moments.</p></div><div data-reveal className="prompt-window"><div className="prompt-top"><span>NEW WORLD / PROMPT</span><span className="live-dot">AI ONLINE</span></div><p>&ldquo;CREATE A MULTIPLAYER SURVIVAL GAME WITH DYNAMIC WEATHER AND AI ENEMIES.&rdquo;</p><div className="generation"><i /><span>GENERATING WORLD ARCHITECTURE...</span></div><button><Sparkles /> GENERATE GAME</button></div></section>
 
