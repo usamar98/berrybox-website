@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ArrowDownRight, ArrowUpRight, Bot, Box, ChevronDown, Code2, Menu, Play, Share2, Sparkles, Users, WandSparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CreatorRewards } from "@/components/creator-rewards";
+import { HeroStockRewards } from "@/components/hero-stock-rewards";
 
 const worlds = [
   { title: "FANTASY KINGDOM", tag: "OPEN WORLD", image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85" },
@@ -44,7 +45,7 @@ export function BerryBoxExperience() {
         <div className="grid" />
         <div className="hero-gallery" aria-hidden="true"><div className="hero-card hero-card-one" /><div className="hero-card hero-card-two" /><div className="hero-card hero-card-three" /></div>
         <div className="kicker"><span>AI-POWERED CREATION PLATFORM</span><span>IDEA TO PLAYABLE WORLD IN MINUTES</span></div>
-        <div className="hero-content"><p className="eyebrow lime">BUILD WHAT&apos;S NEXT</p><h1><span className="hero-a">CREATE GAMES</span><span className="hero-b">WITH AI.</span></h1><div className="hero-bottom"><p>TURN IDEAS INTO PLAYABLE GAMES THROUGH AN AI-POWERED CREATION PLATFORM BUILT FOR THE NEXT GENERATION OF CREATORS.</p><div><a className="cta button-link" href="#studio">START CREATING <ArrowDownRight /></a><Button variant="outline" className="ghost"><Play /> WATCH DEMO</Button></div></div></div>
+        <div className="hero-content"><p className="eyebrow lime">BUILD WHAT&apos;S NEXT</p><h1><span className="hero-a">CREATE GAMES</span><span className="hero-b">WITH AI.</span></h1><HeroStockRewards /><div className="hero-bottom"><p>TURN IDEAS INTO PLAYABLE GAMES THROUGH AN AI-POWERED CREATION PLATFORM BUILT FOR THE NEXT GENERATION OF CREATORS.</p><div><a className="cta button-link" href="#studio">START CREATING <ArrowDownRight /></a><Button variant="outline" className="ghost"><Play /> WATCH DEMO</Button></div></div></div>
       </section>
 
       <section id="why" className="why"><p data-reveal className="eyebrow">01 - WHY BERRYBOX</p><h2 data-reveal>THE FUTURE ISN&apos;T PLAYED. <span>IT&apos;S CREATED.</span></h2><div className="why-grid"><p data-reveal>GAME CREATION HAS TRADITIONALLY REQUIRED CODING, COMPLEX ENGINES AND LARGE DEVELOPMENT TEAMS. BERRYBOX REMOVES THOSE BARRIERS, ENABLING ANYONE TO TRANSFORM IDEAS INTO INTERACTIVE EXPERIENCES WITH AI.</p><div className="features">{[["01", "NO CODE"], ["02", "AI NATIVE"], ["03", "MULTIPLAYER"], ["04", "ONE-CLICK PLAY"]].map(([number, label]) => <article data-reveal key={number}><small>{number}</small><Sparkles /><h3>{label}</h3></article>)}</div></div></section>

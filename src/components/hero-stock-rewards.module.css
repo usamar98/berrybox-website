@@ -1,0 +1,88 @@
+.rewards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  margin-top: 2rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid #ff647633;
+  border-left: 3px solid var(--lime);
+  background: linear-gradient(110deg, #4c0a1ba8, #10090edb 60%);
+}
+
+.copy, .examples { min-width: 0; }
+
+.eyebrow {
+  margin: 0 0 .5rem;
+  color: #eeb4bf;
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: .19em;
+}
+
+.tagline {
+  margin: 0;
+  font-family: var(--font-anton);
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+}
+
+.tagline span { color: var(--lime); }
+
+.detailsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: .6rem;
+  color: #e0cbd0;
+  font-size: .7rem;
+  line-height: 1.6;
+}
+
+.detailsLink svg { width: .9rem; height: .9rem; flex-shrink: 0; color: #ff8da0; }
+.detailsLink:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.detailsLink:focus-visible { outline: 2px solid #ff8da0; outline-offset: 5px; }
+
+.companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.companies li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  min-width: 6.8rem;
+  padding: .75rem;
+  border: 1px solid #ffffff2b;
+  background: #08080bab;
+}
+
+.companies img { flex-shrink: 0; width: 26px; height: 26px; object-fit: contain; filter: invert(1); }
+.companies li > div { display: flex; flex-direction: column; gap: .2rem; }
+.companyName { font-size: .73rem; font-weight: 600; line-height: 1.2; }
+.ticker { color: #bcaab0; font-family: var(--font-mono); font-size: .55rem; letter-spacing: .13em; }
+.disclaimer { margin: .55rem 0 0; color: #bda9b0; font-size: .6rem; line-height: 1.5; }
+
+@media (max-width: 1050px) {
+  .rewards { flex-wrap: wrap; }
+  .examples { flex: 1 1 100%; }
+  .companies li { justify-content: flex-start; }
+}
+
+@media (max-width: 767px) {
+  .rewards { margin-top: 1.5rem; padding: 1rem; gap: 1rem; }
+  .tagline { font-size: clamp(1.5rem, 5.8vw, 2rem); }
+  .detailsLink { font-size: .66rem; }
+  .companies { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; }
+  .companies li { min-width: 0; padding: .7rem .25rem; flex-direction: column; gap: .6rem; text-align: center; }
+  .companies img { width: 24px; height: 24px; }
+  .companyName { font-size: .66rem; }
+  .disclaimer { max-width: 23rem; font-size: .58rem; line-height: 1.6; }
+}
