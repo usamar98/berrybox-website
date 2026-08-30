@@ -27,9 +27,9 @@ const rewardPaths = [
 
 // Illustrative companies only; these are not a supported reward catalog.
 const stockExamples = [
-  { name: "Apple", ticker: "AAPL", href: "https://investor.apple.com/investor-relations/faq/default.aspx" },
-  { name: "Microsoft", ticker: "MSFT", href: "https://www.microsoft.com/en-us/investor/faq" },
-  { name: "NVIDIA", ticker: "NVDA", href: "https://investor.nvidia.com/investor-resources/faqs/default.aspx" },
+  { name: "Apple", ticker: "AAPL" },
+  { name: "Microsoft", ticker: "MSFT" },
+  { name: "NVIDIA", ticker: "NVDA" },
 ];
 
 export function CreatorRewards() {
@@ -80,13 +80,12 @@ export function CreatorRewards() {
             <p className={styles.showcaseDescription}>Stock rewards. A piece of the companies shaping what&apos;s next.</p>
 
             <ul className={styles.stocks} aria-label="Illustrative stock reward companies">
-              {stockExamples.map(({ name, ticker, href }) => (
+              {stockExamples.map(({ name, ticker }) => (
                 <li key={ticker}>
-                  <a href={href} target="_blank" rel="noreferrer" aria-label={`${name} (${ticker}) investor information, opens in a new tab`}>
+                  <div className={styles.stockCard}>
                     <span className={styles.ticker}>{ticker}</span>
                     <span className={styles.company}>{name}</span>
-                    <ArrowUpRight aria-hidden="true" />
-                  </a>
+                  </div>
                 </li>
               ))}
             </ul>

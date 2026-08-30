@@ -133,7 +133,7 @@
 
 .studioLink svg { width: 1.1rem; height: 1.1rem; }
 .studioLink:hover { background: #99182f; }
-.studioLink:focus-visible, .stocks a:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+.studioLink:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
 
 .showcase {
   border: 1px solid #ff77894d;
@@ -183,9 +183,9 @@
 .showcaseDescription { max-width: 22rem; margin: 1rem 0 1.5rem; font-size: .82rem; line-height: 1.7; color: #d3bec5; }
 .stocks { display: grid; gap: .6rem; list-style: none; margin: 0; padding: 0; }
 
-.stocks a {
+.stockCard {
   display: grid;
-  grid-template-columns: 4.5rem 1fr auto;
+  grid-template-columns: 4.5rem 1fr;
   align-items: center;
   gap: 1rem;
   padding: 1rem;
@@ -194,9 +194,7 @@
   color: #f5f5ef;
 }
 
-.stocks li:first-child a { background: #f1ede8; border-color: #f1ede8; color: #1e1016; }
-.stocks a:hover { border-color: #ff667b; }
-.stocks a > svg { width: 1.1rem; height: 1.1rem; opacity: .7; }
+.stocks li:first-child .stockCard { background: #f1ede8; border-color: #f1ede8; color: #1e1016; }
 
 .ticker {
   border-right: 1px solid currentColor;
@@ -258,7 +256,7 @@
   .showcaseBody { padding: 1.5rem 1rem 1.2rem; }
   .showcaseBar, .showcaseFooter { padding-inline: 1rem; }
   .showcase h3 { font-size: clamp(2.5rem, 10vw, 4rem); }
-  .stocks a { grid-template-columns: 3.6rem 1fr auto; gap: .75rem; padding: 1rem .8rem; }
+  .stockCard { grid-template-columns: 3.6rem 1fr; gap: .75rem; padding: 1rem .8rem; }
   .company { font-size: 1.5rem; }
   .ticker { font-size: .65rem; }
   .disclosure { grid-template-columns: 1fr; gap: .7rem; margin-top: 2.5rem; }
