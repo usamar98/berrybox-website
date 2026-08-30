@@ -30,14 +30,21 @@
 
 .tagline span { color: var(--lime); }
 
+.description {
+  max-width: 42rem;
+  margin: .6rem 0 0;
+  color: #e0cbd0;
+  font-size: .7rem;
+  line-height: 1.7;
+}
+
 .detailsLink {
   display: inline-flex;
   align-items: center;
   gap: .45rem;
-  margin-top: .6rem;
-  color: #e0cbd0;
-  font-size: .7rem;
-  line-height: 1.6;
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .detailsLink svg { width: .9rem; height: .9rem; flex-shrink: 0; color: #ff8da0; }
@@ -79,7 +86,7 @@
 @media (max-width: 767px) {
   .rewards { margin-top: 1.5rem; padding: 1rem; gap: 1rem; }
   .tagline { font-size: clamp(1.5rem, 5.8vw, 2rem); }
-  .detailsLink { font-size: .66rem; }
+  .description { font-size: .66rem; }
   .companies { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; }
   .companies li { min-width: 0; padding: .7rem .25rem; flex-direction: column; gap: .6rem; text-align: center; }
   .companies img { width: 24px; height: 24px; }

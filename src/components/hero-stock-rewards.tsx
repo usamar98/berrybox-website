@@ -14,11 +14,14 @@ export function HeroStockRewards() {
       <div className={styles.copy}>
         <p className={styles.eyebrow}>PLANNED CREATOR REWARDS</p>
         <p id="hero-rewards-tagline" className={styles.tagline}>
-          BUILD WORLDS. <span>EARN STOCKS.</span>
+          CREATE. PLAY. <span>EARN STOCKS.</span>
         </p>
-        <a className={styles.detailsLink} href="#rewards">
-          Play. Publish. Create. Explore the rewards <ArrowUpRight aria-hidden="true" />
-        </a>
+        <p className={styles.description}>
+          Creators earn as their games grow. Players earn through eligible gameplay, challenges and rewards.{" "}
+          <a className={styles.detailsLink} href="#rewards">
+            Explore the rewards <ArrowUpRight aria-hidden="true" />
+          </a>
+        </p>
       </div>
       <div className={styles.examples}>
         <ul className={styles.companies} aria-label="Illustrative stock reward companies">
