@@ -44,8 +44,8 @@ export function CreatorRewards() {
         <h2 id="rewards-heading">PLAY. CREATE.<span>OWN A PIECE.</span></h2>
         <p>
           Your next win. Your first game. A template that sparks a thousand worlds.
-          BerryBox&apos;s planned rewards program connects what you contribute to
-          something beyond the game: <strong>real-world stock ownership.</strong>
+          BerryBox is building a rewards layer where the value you create and the
+          games you play can unlock something beyond the game: stock-based rewards.
         </p>
       </div>
 
