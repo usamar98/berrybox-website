@@ -21,6 +21,7 @@ const features = [
 ];
 
 const agents = ["WORLD ARCHITECT", "CHARACTER DESIGNER", "GAMEPLAY DESIGNER", "QUEST WRITER", "AUDIO COMPOSER", "NPC INTELLIGENCE"];
+const workflowSteps = ["DESCRIBE", "GENERATE", "CUSTOMIZE", "PUBLISH", "PLAY", "REWARDS"];
 const roadmap = [["Q3", "AI GAME BUILDER"], ["Q4", "CREATOR MARKETPLACE"], ["Q1", "MULTIPLAYER PUBLISHING"], ["Q2", "CREATOR ECONOMY"]];
 const faqs = [
   ["DO I NEED TO KNOW HOW TO CODE?", "No. Describe the experience you want and BerryBox turns the idea into a playable foundation you can customize visually."],
@@ -50,7 +51,7 @@ export function BerryBoxExperience() {
 
       <section id="why" className="why"><p data-reveal className="eyebrow">01 - WHY BERRYBOX</p><h2 data-reveal>THE FUTURE ISN&apos;T PLAYED. <span>IT&apos;S CREATED.</span></h2><div className="why-grid"><p data-reveal>GAME CREATION HAS TRADITIONALLY REQUIRED CODING, COMPLEX ENGINES AND LARGE DEVELOPMENT TEAMS. BERRYBOX REMOVES THOSE BARRIERS, ENABLING ANYONE TO TRANSFORM IDEAS INTO INTERACTIVE EXPERIENCES WITH AI.</p><div className="features">{[["01", "NO CODE"], ["02", "AI NATIVE"], ["03", "MULTIPLAYER"], ["04", "ONE-CLICK PLAY"]].map(([number, label]) => <article data-reveal key={number}><small>{number}</small><Sparkles /><h3>{label}</h3></article>)}</div></div></section>
 
-      <section id="workflow" className="workflow section-pad"><p data-reveal className="eyebrow lime">02 - AI CREATION WORKFLOW</p><h2 data-reveal>FROM THOUGHT TO <span>PLAYABLE.</span></h2><div className="workflow-line">{["DESCRIBE", "GENERATE", "CUSTOMIZE", "PUBLISH", "PLAY"].map((step, index) => <article data-reveal key={step}><small>0{index + 1}</small><h3>{step}</h3><ArrowDownRight /></article>)}</div></section>
+      <section id="workflow" className="workflow section-pad"><p data-reveal className="eyebrow lime">02 - AI CREATION WORKFLOW</p><h2 data-reveal>FROM THOUGHT TO <span>PLAYABLE.</span></h2><div className="workflow-line">{workflowSteps.map((step, index) => <article data-reveal key={step} className={step === "REWARDS" ? "reward-step" : undefined}><small>0{index + 1}</small><h3>{step}</h3><ArrowDownRight /></article>)}</div></section>
 
       <section id="worlds" className="worlds"><div className="marquee"><div>CREATED WITH BERRYBOX AI ✦ FANTASY ✦ SCI-FI ✦ RACING ✦ SANDBOX ✦ SURVIVAL ✦ CREATED WITH BERRYBOX AI ✦</div></div><div className="section-pad"><p data-reveal className="eyebrow lime">03 - FEATURED GAME WORLDS</p><h2 data-reveal>ANY IDEA. ANY <span>WORLD.</span></h2><div className="cards">{worlds.map((world, index) => <article data-reveal className="world-card" key={world.title}><div className="world-image" style={{ backgroundImage: `linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.08)),url('${world.image}')` }} /><div className="world-copy"><div><span>0{index + 1}</span><span>{world.tag}</span></div><div><small>CREATED WITH BERRYBOX AI</small><h3>{world.title}</h3><button>EXPLORE WORLD <ArrowUpRight /></button></div></div></article>)}</div></div></section>
 
