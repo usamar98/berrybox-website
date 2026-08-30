@@ -97,16 +97,6 @@ export function CreatorRewards() {
           </div>
         </aside>
       </div>
-
-      <div className={styles.disclosure}>
-        <span>THE DETAILS MATTER</span>
-        <p>
-          Stock rewards are a planned feature, not currently available. Eligibility,
-          supported stocks, reward amounts and regional availability will be subject
-          to final program terms. Company names are examples, not partners or
-          endorsements. Stock values can fall as well as rise.
-        </p>
-      </div>
     </section>
   );
 }

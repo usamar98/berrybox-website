@@ -223,18 +223,6 @@
 .showcaseFooter > span:last-child { display: flex; align-items: center; gap: .4rem; color: #ff8c9e; }
 .showcaseFooter svg { width: .85rem; height: .85rem; }
 
-.disclosure {
-  display: grid;
-  grid-template-columns: 12rem 1fr;
-  gap: 2rem;
-  margin-top: 3.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #ffffff24;
-}
-
-.disclosure > span { padding-top: .15rem; color: #e2c0c9; font-size: .58rem; font-weight: 700; letter-spacing: .14em; }
-.disclosure > p { margin: 0; color: #ad9aa1; font-size: .7rem; line-height: 1.8; }
-
 @media (max-width: 1050px) {
   .intro, .content { gap: 2.5rem; grid-template-columns: 1fr 1fr; }
   .pathList li { grid-template-columns: 3rem 1fr; }
@@ -259,5 +247,4 @@
   .stockCard { grid-template-columns: 3.6rem 1fr; gap: .75rem; padding: 1rem .8rem; }
   .company { font-size: 1.5rem; }
   .ticker { font-size: .65rem; }
-  .disclosure { grid-template-columns: 1fr; gap: .7rem; margin-top: 2.5rem; }
 }
