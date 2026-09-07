@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## MetaMask connection
+
+The header, hero, and footer **Connect Wallet** buttons discover MetaMask using EIP-6963, with a legacy injected-provider fallback. The user approves account access and signs a fresh, five-minute Sign-In with Ethereum message using `personal_sign`. BerryBox verifies the signature against the selected account, checks the account and network are unchanged, and then opens `https://dapp.berrybox.fun`.
+
+Verification runs in the browser and supports standard MetaMask EVM accounts. No transaction, token approval, RPC key, backend secret, or gas payment is required. Users without MetaMask receive installation guidance; on a public HTTPS site they can also open the page in MetaMask's mobile browser.
+
+This is a verified navigation flow, not a shared authentication session. The destination dapp must manage its own wallet connection and authorization; no signature or session credential is forwarded in the redirect URL.
+
+Run `npm test`, `npm run typecheck`, `npm run lint`, and `npm run build` to check the implementation. Wallet tests use ephemeral test accounts and never connect to a live wallet or network.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

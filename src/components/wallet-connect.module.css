@@ -1,0 +1,24 @@
+.trigger { border: 0; font-family: inherit; }
+.trigger:disabled { cursor: wait; opacity: .65; }
+.trigger:focus-visible, .dialog button:focus-visible, .dialog a:focus-visible { outline: 2px solid #ff667b; outline-offset: 5px; }
+.dialog { position: fixed; inset: 0; width: min(460px, calc(100vw - 32px)); max-height: calc(100svh - 32px); margin: auto; padding: 36px 28px 24px; overflow-y: auto; border: 1px solid #ff596f66; background: radial-gradient(circle at 100% 0%, #420813, #10090c 65%); color: #fff; box-shadow: 0 24px 90px #0009; }
+.dialog::backdrop { background: #000b; backdrop-filter: blur(6px); }
+.close { position: absolute; top: 14px; right: 14px; display: grid; place-items: center; padding: 6px; border: 0; background: transparent; color: #fff; }
+.icon { display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: 24px; border: 1px solid #ff596f77; background: #750f25; }
+.eyebrow { color: #ff7184; font-size: 10px; letter-spacing: .18em; font-weight: 700; }
+.dialog h2 { margin: 12px 0; font-size: 36px; line-height: 1.1; }
+.dialog p { line-height: 1.6; }
+.dialog > p:not(.eyebrow) { font-size: 14px; color: #e1d4d7; }
+.status, .error { padding: 16px; margin: 24px 0; border: 1px solid #ffffff24; background: #ffffff07; }
+.status { display: flex; align-items: center; gap: 12px; }
+.status svg, .note svg { flex-shrink: 0; }
+.dialog .error { color: #ffb6c0; border-color: #ff596f66; }
+.actions { display: grid; gap: 12px; margin-block: 20px; }
+.actions a, .retry { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 16px; border: 1px solid #ff718466; font-size: 13px; font-weight: 700; background: #6d1024; color: white; }
+.actions a:hover, .retry:hover { background: #9b1732; }
+.actions p { margin: 0; font-size: 13px; color: #c1aeb2; }
+.retry { width: 100%; cursor: pointer; }
+.dialog .note { display: flex; align-items: center; gap: 10px; margin: 24px 0 0; padding-top: 20px; border-top: 1px solid #ffffff20; font-size: 12px !important; color: #bea9ae !important; }
+.spinner { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }

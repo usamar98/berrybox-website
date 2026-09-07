@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -6,6 +6,7 @@ import { ArrowDownRight, ArrowUpRight, Bot, Box, ChevronDown, Code2, Menu, Play,
 import { Button } from "@/components/ui/button";
 import { CreatorRewards } from "@/components/creator-rewards";
 import { HeroStockRewards } from "@/components/hero-stock-rewards";
+import { ConnectWalletButton, WalletConnectProvider } from "@/components/wallet-connect";
 
 const worlds = [
   { title: "FANTASY KINGDOM", tag: "OPEN WORLD", image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85" },
@@ -33,11 +34,11 @@ const faqs = [
 export function BerryBoxExperience() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  return <div className="site">
+  return <WalletConnectProvider><div className="site">
     <header>
       <a className="logo" href="#top" aria-label="BerryBox home"><Image src="/berrybox.png" alt="BerryBox" width={220} height={82} priority /></a>
       <nav><a href="#workflow">WORKFLOW</a><a href="#worlds">WORLDS</a><a href="#studio">STUDIO</a><a href="#rewards">REWARDS</a><a href="#roadmap">ROADMAP</a></nav>
-      <a className="cta desktop button-link" href="#join">START CREATING <ArrowUpRight /></a>
+      <ConnectWalletButton className="cta desktop button-link" />
       <button className="mobile" aria-label="Open menu" onClick={() => setMenuOpen(true)}><Menu /></button>
     </header>
     <div className={`mobile-nav ${menuOpen ? "open" : ""}`}><button aria-label="Close menu" onClick={() => setMenuOpen(false)}><X /></button>{[["WORKFLOW", "workflow"], ["WORLDS", "worlds"], ["STUDIO", "studio"], ["REWARDS", "rewards"], ["ROADMAP", "roadmap"]].map(([name, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{name}</a>)}</div>
@@ -47,7 +48,7 @@ export function BerryBoxExperience() {
         <div className="grid" />
         <div className="hero-gallery" aria-hidden="true"><div className="hero-card hero-card-one" /><div className="hero-card hero-card-two" /><div className="hero-card hero-card-three" /></div>
         <div className="kicker"><span>AI-POWERED CREATION PLATFORM</span><span>IDEA TO PLAYABLE WORLD IN MINUTES</span></div>
-        <div className="hero-content"><p className="eyebrow lime">BUILD WHAT&apos;S NEXT</p><h1><span className="hero-a">CREATE GAMES</span><span className="hero-b">WITH AI.</span></h1><HeroStockRewards /><div className="hero-bottom"><p>BUILD GAMES WITH AI. PUBLISH THEM TO BERRYHUB. PLAY COMMUNITY-BUILT EXPERIENCES. UNLOCK STOCK-BASED REWARDS <span className="chain-highlight">BUILT ON ROBINHOOD CHAIN.</span></p><div><a className="cta button-link" href="#studio">START CREATING <ArrowDownRight /></a><Button variant="outline" className="ghost"><Play /> WATCH DEMO</Button></div></div></div>
+        <div className="hero-content"><p className="eyebrow lime">BUILD WHAT&apos;S NEXT</p><h1><span className="hero-a">CREATE GAMES</span><span className="hero-b">WITH AI.</span></h1><HeroStockRewards /><div className="hero-bottom"><p>BUILD GAMES WITH AI. PUBLISH THEM TO BERRYHUB. PLAY COMMUNITY-BUILT EXPERIENCES. UNLOCK STOCK-BASED REWARDS <span className="chain-highlight">BUILT ON ROBINHOOD CHAIN.</span></p><div><ConnectWalletButton className="cta button-link" /><Button variant="outline" className="ghost"><Play /> WATCH DEMO</Button></div></div></div>
       </section>
 
       <section id="why" className="why"><p data-reveal className="eyebrow">01 - WHY BERRYBOX</p><h2 data-reveal>THE FUTURE ISN&apos;T PLAYED. <span>IT&apos;S CREATED.</span></h2><div className="why-grid"><p data-reveal>GAME CREATION HAS TRADITIONALLY REQUIRED CODING, COMPLEX ENGINES, AND LARGE DEVELOPMENT TEAMS. BERRYBOX REMOVES THOSE BARRIERS, ENABLING ANYONE TO CREATE, PUBLISH, AND PLAY AI-POWERED GAMES WHILE OPENING A NEW REWARD LAYER WHERE CREATORS AND PLAYERS CAN EARN STOCK-BASED REWARDS THROUGH PARTICIPATION.</p><div className="features">{[["01", "NO CODE"], ["02", "AI NATIVE"], ["03", "MULTIPLAYER"], ["04", "ONE-CLICK PLAY"], ["05", "EARN REWARDS"]].map(([number, label]) => <article data-reveal key={number} className={label === "EARN REWARDS" ? "earn-rewards" : undefined}><small>{number}</small><Sparkles /><h3>{label}</h3></article>)}</div></div></section>
@@ -71,8 +72,8 @@ export function BerryBoxExperience() {
       <section className="faq section-pad"><p data-reveal className="eyebrow lime">10 - FAQ</p><h2 data-reveal>QUESTIONS, <span>ANSWERED.</span></h2><div className="faq-list">{faqs.map(([question, answer], index) => <details data-reveal key={question}><summary><span>0{index + 1} / {question}</span><ChevronDown /></summary><p>{answer}</p></details>)}</div></section>
     </main>
 
-    <footer id="join"><p className="eyebrow">YOUR WORLD IS WAITING</p><h2 data-reveal>BUILD WHAT&apos;S NEXT. <span>CREATE YOUR FIRST AI-POWERED GAME IN MINUTES.</span></h2><a className="footer-cta" href="#studio">START CREATING <ArrowUpRight /></a><div className="signup"><p>GET PRODUCT DROPS, CREATOR STORIES AND NEW WORLD RELEASES IN YOUR INBOX.</p><form onSubmit={(event) => event.preventDefault()}><input aria-label="Email address" placeholder="YOUR EMAIL ADDRESS" type="email" /><button aria-label="Subscribe"><ArrowUpRight /></button></form></div><div className="foot-grid"><div><b className="footer-wordmark">BERRYBOX</b><p>CREATE. PLAY. BUILD.<br />THE AI-NATIVE HOME FOR THE NEXT GENERATION OF GAME CREATORS.</p></div><p><b>PLATFORM</b><br />WORKFLOW<br />CREATOR STUDIO<br />MARKETPLACE</p><div className="footer-socials"><b>FOLLOW</b><div><a href="https://t.me/berryboxofficial" target="_blank" rel="noreferrer" aria-label="Telegram"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 2.51 18.7 21.13c-.24 1.32-.88 1.64-1.79 1.02l-4.93-3.63-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.18 14.93l-4.87-1.52c-1.06-.33-1.08-1.06.22-1.57L20.57 4.5c.88-.33 1.65.2 1.37 2.01Z" /></svg></a><a href="https://x.com/PlayBerrybox" target="_blank" rel="noreferrer" aria-label="X"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.74-8.85L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.11l11.97 15.64Z" /></svg></a></div></div></div><div className="copyright"><span>© 2026 BERRYBOX</span><span>THE FUTURE IS CREATED</span></div></footer>
-  </div>;
+    <footer id="join"><p className="eyebrow">YOUR WORLD IS WAITING</p><h2 data-reveal>BUILD WHAT&apos;S NEXT. <span>CREATE YOUR FIRST AI-POWERED GAME IN MINUTES.</span></h2><ConnectWalletButton className="footer-cta" /><div className="signup"><p>GET PRODUCT DROPS, CREATOR STORIES AND NEW WORLD RELEASES IN YOUR INBOX.</p><form onSubmit={(event) => event.preventDefault()}><input aria-label="Email address" placeholder="YOUR EMAIL ADDRESS" type="email" /><button aria-label="Subscribe"><ArrowUpRight /></button></form></div><div className="foot-grid"><div><b className="footer-wordmark">BERRYBOX</b><p>CREATE. PLAY. BUILD.<br />THE AI-NATIVE HOME FOR THE NEXT GENERATION OF GAME CREATORS.</p></div><p><b>PLATFORM</b><br />WORKFLOW<br />CREATOR STUDIO<br />MARKETPLACE</p><div className="footer-socials"><b>FOLLOW</b><div><a href="https://t.me/berryboxofficial" target="_blank" rel="noreferrer" aria-label="Telegram"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 2.51 18.7 21.13c-.24 1.32-.88 1.64-1.79 1.02l-4.93-3.63-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.18 14.93l-4.87-1.52c-1.06-.33-1.08-1.06.22-1.57L20.57 4.5c.88-.33 1.65.2 1.37 2.01Z" /></svg></a><a href="https://x.com/PlayBerrybox" target="_blank" rel="noreferrer" aria-label="X"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.74-8.85L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.11l11.97 15.64Z" /></svg></a></div></div></div><div className="copyright"><span>© 2026 BERRYBOX</span><span>THE FUTURE IS CREATED</span></div></footer>
+  </div></WalletConnectProvider>;
 }
 
 
